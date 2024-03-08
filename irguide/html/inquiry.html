@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IR Guide</title>
+    <link rel="shortcut icon" href="../images/SadBread2.jfif" type="x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="../css/layout03.css" />
+    <script src="../js/gnb.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <!-- 다음에서 제공하는 주소찾기 코드 -->
+  </head>
+  <body>
+    <!-- header start -->
+    <header>
+      <h1>
+        <a href="" class="logo"><img src="../images/SadBread2.jfif" /> </a>
+      </h1>
+      <ul class="gnb">
+        <li>
+          <a href="" class="depth01">제품소개</a>
+          <ul class="depth02">
+            <li><a href="">열화상 카메라</a></li>
+            <li><a href="">산업용 안전펜스</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="" class="depth01">머신비전</a>
+          <ul></ul>
+        </li>
+        <li>
+          <a href="" class="depth01">회사소개</a>
+          <ul class="depth02">
+            <li><a href="">회사 연혁</a></li>
+            <li><a href="">오시는 길</a></li>
+            <li><a href="">채용 정보</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="" class="depth01">고객지원</a>
+          <ul class="depth02">
+            <li><a href="">자료실</a></li>
+            <li><a href="">적용사례</a></li>
+            <li><a href="">공지사항</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="" class="depth01">고객문의</a>
+          <ul class="depth02">
+            <li><a href="">문의하기</a></li>
+          </ul>
+        </li>
+        <li><a href="" class="depth01" img src="images/SadBread2.jfif"></a></li>
+      </ul>
+    </header>
+    <!-- header end -->
+    <div class="join">
+      <div class="container">
+        <h2>
+          궁금하신 점이 있으신가요? 문의내용을 남겨주시면 신속하게
+          답변드리겠습니다.
+        </h2>
+        <div class="basic-info-box">
+          <form action="join-confirm.html" method="get" id="join-form">
+            <!-- div start -->
+            <div class="table-box">
+              <h4>*표시된 항목은 필수 기입 항목입니다.</h4>
+              <!-- table start -->
+
+              <!-- 데이터를 보낼 때 form 태그를 사용 -->
+              <!--메서드를 post로 하면 데이터가 안 보이게 전달 가능-->
+              <!-- request -->
+              <table class="form-table">
+                <tbody>
+                  <colgroup>
+                    <col style="width: 150px" />
+                    <!-- th 안에 글자 길어도 튀어나감 제한-->
+                    <!-- 서버는 주로 name 값을 받는다 -->
+                    <col />
+                  </colgroup>
+                  <tr>
+                    <th><label for="user-id">문의유형</label></th>
+                    <td>
+                      <input type="radio" name="" id="" />
+                      교육문의
+                      <input type="radio" name="" id="" />
+                      인재요청
+                      <input type="radio" name="" id="" />
+                      기타
+                    </td>
+                  </tr>
+                  <tr>
+                    <th><label for="user-name">휴대폰</label></th>
+                    <!-- <td>
+                      <input
+                        type="text"
+                        name=""
+                        placeholder="이름을 입력하세요."
+                        id="user-name"
+                      />
+                    </td> -->
+                    <td>
+                      <select name="userHp" id="">
+                        <option value="010" selected>010</option>
+                        <option value="016">016</option>
+                        <option value="017">017</option>
+                        <option value="018">018</option>
+                        <option value="019">019</option>
+                      </select>
+                      <input
+                        type="text"
+                        name="userHpMiddle"
+                        class="short"
+                        id=""
+                      />
+                      <input
+                        type="text"
+                        name="userHpLast"
+                        class="short"
+                        id=""
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th><label for="user-hp">문의내용</label></th>
+                    <td>
+                      <select name="userHp" id="">
+                        <option value="010" selected>010</option>
+                        <option value="016">016</option>
+                        <option value="017">017</option>
+                        <option value="018">018</option>
+                        <option value="019">019</option>
+                      </select>
+                      <input
+                        type="text"
+                        name="userHpMiddle"
+                        class="short"
+                        id=""
+                      />
+                      <input
+                        type="text"
+                        name="userHpLast"
+                        class="short"
+                        id=""
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- table end -->
+              <!-- 라디오 타입 체크에서 name을 같게 해야 중복 체크가 안된다 -->
+              <br />
+              <!-- <button class="btn" id="btn-join">회원가입</button> -->
+            </div>
+            <h4 class="table-box">
+              개인정보 수집 및 이용약관(전문보기)에 동의 하십니까?
+            </h4>
+            <!-- div end -->
+          </form>
+          <!-- div end -->
+        </div>
+      </div>
+    </div>
+    <button class="btn-top">TOP</button>
+  </body>
+  <script>
+    //validation check 회원가입 시 필수정보 입력했는지 검증하는 부분
+    const btnJoin = document.querySelector("#btn-join");
+    const joinForm = document.querySelector("#join-form");
+    const userId = document.querySelector("#user-id");
+    const passWord = document.querySelector("#user-pw");
+    const passWordConfirm = document.querySelector("#user-pw-confirm");
+    const userName = document.querySelector("#user-name");
+    const postCode = document.querySelector("#postCode");
+    const agreeConfirm = document.querySelector("#btn-agree");
+
+    btnJoin.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (userId.value.trim() === "") {
+        alert("아이디를 입력해주세요!!");
+        userId.value = "";
+        userId.focus(); //아이디 미입력 확인시 아이디 입력칸으로 이동 후 사용자에게 알림
+      } else if (passWord.value === "") {
+        alert("비밀번호를 입력해주세요!!");
+        passWord.value = "";
+        passWord.focus();
+      } else if (
+        passWordConfirm.value === "" ||
+        passWord.value !== passWordConfirm.value
+      ) {
+        alert("비밀번호를 다시 확인해주세요!!");
+        passWordConfirm.value = "";
+        passWordConfirm.focus();
+      } else if (userName.value === "") {
+        alert("이름을 입력해주세요!!");
+        userName.value = "";
+        userName.focus();
+      } else if (postCode.value === "") {
+        alert("우편주소를 입력해주세요!!");
+        postCode.focus();
+      } else if (agreeConfirm.checked === false) {
+        alert("약관에 동의해주세요!!");
+        agreeConfirm.focus();
+      } else {
+        joinForm.submit();
+      }
+      //....
+
+      // joinForm.submit();
+    });
+  </script>
+</html>

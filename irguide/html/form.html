@@ -188,13 +188,13 @@
                         type="text"
                         name="userHpMiddle"
                         class="short"
-                        id=""
+                        id="hp-middle"
                       />
                       <input
                         type="text"
                         name="userHpLast"
                         class="short"
-                        id=""
+                        id="hp-last"
                       />
                     </td>
                   </tr>
@@ -218,16 +218,41 @@
                   <tr>
                     <th><label for="gender">성별</label></th>
                     <td>
-                      <input type="radio" name="gender" value="male" />남자
-                      <input type="radio" name="gender" value="male" />여자
+                      <input
+                        type="radio"
+                        name="gender"
+                        value="male"
+                        id="btn-male"
+                      />남자
+                      <input
+                        type="radio"
+                        name="gender"
+                        value="male"
+                        id="btn-female"
+                      />여자
                     </td>
                   </tr>
                   <tr>
                     <th><label for="birth">생년월일</label></th>
                     <td>
-                      <input type="text" name="year" class="short" />년
-                      <input type="text" name="month" class="short" />월
-                      <input type="text" name="data" class="short" />일
+                      <input
+                        type="text"
+                        name="year"
+                        class="short"
+                        id="user-year"
+                      />년
+                      <input
+                        type="text"
+                        name="month"
+                        class="short"
+                        id="user-month"
+                      />월
+                      <input
+                        type="text"
+                        name="data"
+                        class="short"
+                        id="user-days"
+                      />일
                     </td>
                   </tr>
                 </tbody>
@@ -267,8 +292,6 @@
                 <button class="btn" id="btn-join">회원가입</button>
               </div>
             </div>
-            <!-- div end -->
-
             <!-- div end -->
           </form>
           <!-- div end -->
@@ -355,6 +378,13 @@
     const userName = document.querySelector("#user-name");
     const postCode = document.querySelector("#postCode");
     const agreeConfirm = document.querySelector("#btn-agree");
+    const userHpMiddle = document.querySelector("#hp-middle");
+    const userHpLast = document.querySelector("#hp-last");
+    const btnMale = document.querySelector("#btn-male");
+    const btnFemale = document.querySelector("#btn-female");
+    const userYear = document.querySelector("#user-year");
+    const userMonth = document.querySelector("#user-month");
+    const userDay = document.querySelector("#user-days");
 
     btnJoin.addEventListener("click", function (e) {
       e.preventDefault();
@@ -383,6 +413,23 @@
       } else if (agreeConfirm.checked === false) {
         alert("약관에 동의해주세요!!");
         agreeConfirm.focus();
+      } else if (userHpMiddle.value === "" || userHpLast.value === "") {
+        alert("휴대폰 번호를 확인해주세요!!");
+        userHpMiddle.focus();
+        userHpLast.focus();
+      } else if (btnMale.checked === false && btnFemale.checked === false) {
+        alert("성별을 선택해주세요!!");
+        btnMale.focus();
+        btnFemale.focus();
+      } else if (
+        userYear.value === "" ||
+        userMonth.value === "" ||
+        userDay.value === ""
+      ) {
+        alert("생년월일을 확인해주세요!!");
+        userYear.focus();
+        userMonth.focus();
+        userDay.focus();
       } else {
         joinForm.submit();
       }
