@@ -1,0 +1,44 @@
+@mixin longShadow($end, $shadowColor) {
+  //@for 하면 반복문
+  //@if도 있음
+  $shadow: "";
+  @for $i from 1 through $end - 1 {
+    // box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    $shadow: $shadow + $i + "px " + $i + "px 0 " + $shadowColor + ",";
+    //50개의 검은색 그림자가 생길것
+  }
+  $shadow: $shadow + $end + "px " + $end + "px 0 " + $shadowColor + ";";
+  $shadow: unquote($shadow);
+  text-shadow: $shadow;
+}
+
+@mixin flex($position: center) {
+  //중복해서 많이 쓰는 코드를 함수로 만들어 다른 css에 import 시킬 수 있다
+  @if $position == start {
+    justify-content: start;
+  } @else if $position == end {
+    justify-content: end;
+  } @else {
+    justify-content: center;
+  }
+  display: flex;
+  align-items: center;
+}
+
+@mixin ellipse() {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+//두 줄 이상의 말줄임
+@mixin multiEllipsis($line: 2, $lineHeight: 1.5) {
+  display: -webkit-box;
+  overflow: hidden;
+  line-height: $lineHeight;
+  height: $line * $lineHeight * 1em; //픽셀은 절대단위임, 높이를 입력값에 따라 생성
+  //글자 크기 상관없이 높이를 자동으로 맞춤
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}

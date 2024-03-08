@@ -1,0 +1,190 @@
+.main-visual {
+  overflow: hidden;
+  height: 100vh;
+
+  // scrollbar-width: hidden;
+  ul {
+    li {
+      display: flex;
+      justify-content: space-evenly;
+      //justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      height: 100vh;
+      //vh: 모니터 높이
+      .img-box {
+        img {
+          height: 500px;
+        }
+      }
+      .txt-box {
+        .title {
+          font-size: 48px;
+          font-weight: 900;
+          margin-bottom: 50px;
+          width: 550px;
+          @include multiEllipsis(3, 1.2);
+          //자동으로 글자 크기와 높이를 multiEllipsis를 통해 맞춰짐
+        }
+        .txt {
+          font-size: 20px;
+          font-weight: 500;
+          span {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+  .pagination {
+    position: absolute;
+    bottom: 100px;
+    z-index: 10;
+    @include flex();
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+      border: 3px solid #333;
+      background-color: transparent;
+      border-radius: 100px;
+      transition: all 0.5s ease;
+      &-active {
+        //밑에 페이지 전환 나타내는 점
+        background-color: $main-color;
+        border-color: $main-color;
+        width: 70px;
+      }
+    }
+    //.swiper-pagination-bullet-active
+  }
+  button {
+    position: absolute; //absolute 선언 => 위치 내맘대로 옮길 수 있음
+    top: 50%;
+    z-index: 2;
+    cursor: pointer;
+    span {
+      font-size: 100px;
+      font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+    }
+    &.btn-prev {
+      left: 20px;
+    }
+    &.btn-next {
+      right: 20px;
+    }
+  }
+}
+
+.banner {
+  overflow: hidden;
+  position: relative;
+  h2 {
+    margin-bottom: 40px;
+  }
+  .container {
+    position: relative;
+  }
+  .mask {
+    overflow: hidden;
+    padding: 30px;
+  }
+  ul {
+    li {
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      border-radius: 10px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      .img-box {
+        overflow: hidden;
+        img {
+          transition: all 0.25s ease;
+        }
+      }
+      &:hover {
+        transform: translateY(-20px);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+        .img-box {
+          img {
+            transform: scale(1.2);
+          }
+        }
+      }
+      h3 {
+        font-size: 16px;
+      }
+      img {
+        width: 100%;
+      }
+
+      .price {
+        strong {
+          font-weight: 900;
+          font-size: 24px;
+        }
+      }
+      .bottom-info {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &.swiper-slide:hover {
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); //각각 x축, y축
+      }
+    }
+  }
+
+  button {
+    position: absolute; //absolute 선언 => 위치 내맘대로 옮길 수 있음
+    top: 50%;
+    z-index: 2;
+    cursor: pointer;
+    display: flex;
+    background-color: #fff;
+    border-radius: 100px;
+    border: 1px solid #000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 5);
+    z-index: 2;
+    span {
+      font-size: 60px;
+      font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+    }
+    &.btn-prev {
+      left: 30px;
+    }
+    &.btn-next {
+      right: 30px;
+    }
+  }
+}
+
+.btn-top {
+  width: 50px;
+  height: 50px;
+  @include flex();
+  background-color: $main-color;
+  color: #fff;
+  border: none;
+  position: fixed;
+  right: 50px;
+  bottom: -150px;
+  z-index: 98;
+  font-weight: 700;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); //각각 x축, y축
+  overflow: hidden;
+  @include longShadow(
+    30,
+    darken($main-color, 10)
+  ); //darken: 색상을 어둡게 하는 기능
+  // text-shadow: 1px 1px 0 rgba(0, 0, 0, 1);
+  transition: all 0.25s ease;
+  //scroll의 위치값이 300보다 커지면 show라는 클래스를 달아서
+  // bottom을 원래 위치인 50으로 잡아주는 역할을 옮겨놓기
+  &.show {
+    bottom: 50px;
+  }
+}

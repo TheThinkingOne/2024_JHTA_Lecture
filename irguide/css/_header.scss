@@ -1,0 +1,88 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+  //box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); //겹치는 부분 뿌옇게 보임
+  transition: all 0.5s ease;
+  &.scroll {
+    height: 80px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    .gnb {
+      .depth01 {
+        height: 80px;
+      }
+    }
+  }
+  //css는 형제 선택자, 자식 선택자는 있지만 부모 선택자는 없음
+  &.over {
+    height: 250px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  }
+  // align-items: start; //높이
+  h1 {
+    img {
+      height: 80px;
+      margin-left: 10px;
+    }
+  }
+  .gnb {
+    display: flex;
+    text-align: center;
+    // &:hover ~ header 이런건 지원 안함
+    li {
+      &:hover {
+        .depth02 {
+          pointer-events: auto;
+          opacity: 1;
+        }
+      }
+    }
+    .depth01 {
+      display: flex;
+      height: 100px;
+      justify-content: center;
+      align-items: center;
+      margin-left: 30px; /* 여기가 핵심 */
+      margin-right: 30px;
+      color: $main-color;
+      transition: all 0.5s ease;
+    }
+
+    .depth02 {
+      opacity: 0;
+      // display: none;
+      text-align: center;
+      background-color: $main-color;
+      position: absolute;
+      pointer-events: none;
+      // padding-top: 20px;
+      // padding-bottom: 20px;
+      // padding-left: 20px;
+      // padding-right: 20px;
+      padding: 20px;
+      // border-radius: 20px;
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      transition: all 0.5s ease;
+
+      li {
+        //상단 위 메뉴얼 꾸미는 부분
+        // margin-top: 10px;
+        a {
+          color: #fff;
+          &:hover {
+            color: #111;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

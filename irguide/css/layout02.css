@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Noto Sans KR";
+}
+
+header {
+  justify-content: space-between;
+  display: flex;
+}
+
+header .gnb {
+  display: flex;
+  text-align: center;
+}
+
+header .gnb .depth01 {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px; /* 여기가 핵심 */
+  margin-right: 30px;
+}
+
+/* a 태그는 부모로부터 color 값을 상속받지 않는다, 왜 그런지 물어도 답변 아무도 못해준다 */
+header.gnb .depth02 {
+  font-size: 14px;
+  color: #999;
+}
+
+header ul {
+  background-color: #f00;
+}
+
+header .gnb .depth02 a:hover {
+  color: #111;
+}
